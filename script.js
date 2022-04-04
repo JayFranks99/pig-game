@@ -16,6 +16,18 @@
 
 // Check if roll is a 1, if it is - switch to the next player
 
+// HOLDING (hold click)
+
+// Listen for hold button click
+
+// If clicked, add the CURRENT SCORE to the OVERALL SCORE for the current player
+
+// Check if overall score is =>25, if so current player wins, if not switch to the other player
+
+// Reset all variables, scores to 0
+
+// Set player one as the starting player
+
 const player1 = {
   score: 0,
   currentScore: 0,
@@ -28,8 +40,10 @@ const player2 = {
   currentPlayer: false,
 };
 
+// VARS
 const rollBtn = document.querySelector(".btn--roll");
 const holdBtn = document.querySelector(".btn--hold");
+const newBtn = document.querySelector(".btn--new");
 
 let diceImg = document.querySelector(".dice");
 
@@ -51,6 +65,7 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// ROLL BUTTON FUNCTION
 rollBtn.addEventListener("click", function () {
   let rollNumber = randomIntFromInterval(1, 6);
   console.log(`Roll is ${rollNumber}`);
@@ -94,42 +109,59 @@ rollBtn.addEventListener("click", function () {
   }
 });
 
-// HOLD FUNCTIOn
-
+// HOLD BUTTON FUNCTION
 holdBtn.addEventListener("click", function () {
   console.log("clicked");
   console.log(player1.score, player2.score);
   if (player1.currentPlayer === true) {
-    player1.currentScore = player1.score;
+    // Setting the current score
+    player1.currentScore = player1.score + player1.currentScore;
     p1CurrentScore.textContent = player1.currentScore;
+    // Ressetting the score
     player1.score = 0;
     p1Score.textContent = player1.score;
+    // Switching active player
     player2.currentPlayer = true;
     player1.currentPlayer = false;
     p2Active.classList.add("player--active");
     p1Active.classList.remove("player--active");
   } else if (player2.currentPlayer === true) {
-    player2.currentScore = player2.score;
+    // Setting the current score
+    player2.currentScore = player2.score + player2.currentScore;
     p2CurrentScore.textContent = player2.currentScore;
+    // Ressetting the score
     player2.score = 0;
     p2Score.textContent = player2.score;
+    // Switching active player
     player1.currentPlayer = true;
     player2.currentPlayer = false;
-    p2Active.classList.remove("player--active");
     p1Active.classList.add("player--active");
+    p2Active.classList.remove("player--active");
+  }
+
+  if (player1.currentScore >= 25) {
+    p1Active.classList.add("player--winner");
+  } else if (player2.currentScore >= 25) {
+    p2Active.classList.add("player--winner");
   }
 });
 
-// HOLDING (hold click)
-
-// Listen for hold button click
-
-// If clicked, add the CURRENT SCORE to the OVERALL SCORE for the current player
-
-// Check if overall score is =>50, if so current player wins, if not switch to the other player
-
 // RESETTING GAME (new game click)
 
-// Reset all variables, scores to 0
-
-// Set player one as the startin player
+newBtn.addEventListener("click", function () {
+  console.log("new btn clicked");
+  player1.score = 0;
+  player1.currentScore = 0;
+  p1CurrentScore.textContent = player1.currentScore;
+  p1Score.textContent = player1.score;
+  player1.currentPlayer = true;
+  p1Active.classList.add("player--active");
+  player2.score = 0;
+  player2.currentScore = 0;
+  p2CurrentScore.textContent = player2.currentScore;
+  p2Score.textContent = player2.score;
+  player2.currentPlayer = false;
+  p2Active.classList.remove("player--active");
+  p2Active.classList.remove("player--winner");
+  p2Active.classList.remove("player--winner");
+});
