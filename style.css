@@ -165,3 +165,24 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
+
+@media (max-width: 600px) {
+  body {
+    height: 100vh;
+    display: block;
+    background-image: none;
+    background-color: white;
+  }
+
+  main {
+    top: 10vh;
+  }
+
+  .player {
+    padding: 6rem;
+  }
+
+  .player--active {
+    background-color: #e3798e;
+  }
+}

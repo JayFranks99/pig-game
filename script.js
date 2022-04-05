@@ -162,6 +162,6 @@ newBtn.addEventListener("click", function () {
   p2Score.textContent = player2.score;
   player2.currentPlayer = false;
   p2Active.classList.remove("player--active");
-  p2Active.classList.remove("player--winner");
+  p1Active.classList.remove("player--winner");
   p2Active.classList.remove("player--winner");
 });
