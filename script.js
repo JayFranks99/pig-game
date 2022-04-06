@@ -1,5 +1,37 @@
 "use strict";
 
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+// Listen for page load, then open modal
+
+// Closing modal
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// Key press escape
+document.addEventListener("keydown", function (e) {
+  // console.log(e.key);
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
+setTimeout(openModal, 3000);
+
+// GAME CODE
+
 // Player objects
 const player1 = {
   score: 0,
@@ -116,9 +148,9 @@ holdBtn.addEventListener("click", function () {
     switchToPlayer1();
   }
 
-  if (player1.currentScore >= 25) {
+  if (player1.currentScore >= 50) {
     p1Active.classList.add("player--winner");
-  } else if (player2.currentScore >= 25) {
+  } else if (player2.currentScore >= 50) {
     p2Active.classList.add("player--winner");
   }
 });
