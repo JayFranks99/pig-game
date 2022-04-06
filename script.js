@@ -1,5 +1,6 @@
 "use strict";
 
+// Player objects
 const player1 = {
   score: 0,
   currentScore: 0,
@@ -12,7 +13,7 @@ const player2 = {
   currentPlayer: false,
 };
 
-// VARS
+// Variables
 const rollBtn = document.querySelector(".btn--roll");
 const holdBtn = document.querySelector(".btn--hold");
 const newBtn = document.querySelector(".btn--new");
@@ -30,15 +31,12 @@ let p2CurrentScore = document.querySelector("#current--2");
 let p1Active = document.querySelector(".player--1");
 let p2Active = document.querySelector(".player--2");
 
-console.log(player1, player2);
-
 // Random number function - set min, max values as inputs when calling
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 // Switching player functions
-
 const switchToPlayer2 = function () {
   // Switching active player
   player2.currentPlayer = true;
@@ -48,6 +46,8 @@ const switchToPlayer2 = function () {
   // Ressetting the score
   player1.score = 0;
   p1Score.textContent = player1.score;
+  // Ressetting the dice
+  diceImg.setAttribute("src", "dice-1.png");
 };
 
 const switchToPlayer1 = function () {
@@ -59,6 +59,8 @@ const switchToPlayer1 = function () {
   // Ressetting the score
   player2.score = 0;
   p2Score.textContent = player2.score;
+  // Ressetting the dice
+  diceImg.setAttribute("src", "dice-1.png");
 };
 
 // End of switching player functions
@@ -105,6 +107,7 @@ holdBtn.addEventListener("click", function () {
     p1CurrentScore.textContent = player1.currentScore;
     // Switching active player // Ressetting the score
     switchToPlayer2();
+    diceImg.setAttribute("src", "dice-1.png");
   } else if (player2.currentPlayer === true) {
     // Setting the current score
     player2.currentScore = player2.score + player2.currentScore;
@@ -136,4 +139,5 @@ newBtn.addEventListener("click", function () {
   p2Active.classList.remove("player--active");
   p1Active.classList.remove("player--winner");
   p2Active.classList.remove("player--winner");
+  diceImg.setAttribute("src", "dice-1.png");
 });
