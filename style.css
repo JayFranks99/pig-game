@@ -15,12 +15,32 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+}
+
+.btn {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
 .player--active {
   background-color: #e3798e;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .player--winner {
@@ -32,13 +52,10 @@ body {
   color: #c7365f;
 }
 
-.player--active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
 .player--active .name {
   font-weight: 700;
 }
+
 .player--active .score {
   font-weight: 400;
 }
@@ -47,164 +64,8 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 700px) {
-  .modal {
-    width: 100%;
-    padding: 3rem;
-  }
-
-  .btns-top {
-    position: fixed;
-    bottom: top;
-    padding: 15px 0;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
-  }
-
-  .btns-bottom {
-    position: fixed;
-    bottom: 0;
-    background-color: rgb(255, 255, 255);
-    padding: 15px 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
-  }
-
-  .btn {
-    border: none;
-    font-family: inherit;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 400;
-    transition: all 0.2s;
-    background-color: white;
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2.5rem;
-    border-radius: 50rem;
-    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-  }
-
-  .btns-bottom button {
-    margin: 0 10px;
-    width: 45%;
-  }
-
-  .btn-new {
-    position: fixed;
-    top: 10px;
-  }
-
-  .dice {
-    width: 80px;
-    position: absolute;
-    left: 50%;
-    top: 44%;
-    transform: translateX(-50%);
-    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
-    z-index: 999;
-  }
-
-  .player {
-    transition: all 0.75s;
-  }
-
-  .player--1 {
-    position: absolute;
-    height: 40vh;
-    top: 10vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .player--2 {
-    position: absolute;
-    height: 40vh;
-    bottom: 10vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .player .name {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-  }
-
-  .score-div,
-  .current {
-    display: flex;
-    align-items: center;
-    font-size: 1.75rem;
-  }
-
-  .current-label,
-  .score-label {
-    margin-right: 5px;
-    text-transform: uppercase;
-  }
-
-  .current {
-    background: #c7365f;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 2em;
-    margin: 10px 0 0 0;
-    text-transform: uppercase;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 1.25rem;
-  }
-
-  .score-div {
-    border-radius: 2em;
-    font-size: 7rem;
-    text-transform: uppercase;
-  }
-
-  .score {
-    color: #c7365f;
-  }
-
-  .player--active {
-    background-color: #f39bb7;
-  }
-
-  body {
-    background-color: #ebd6dc;
-    background-image: none;
-  }
-
-  .current-label {
-    font-size: 1.25rem;
-  }
-
-  .current-score {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 701px) {
-  /* MODAL STYLES */
-  /* .show-modal {
+/* MODAL STYLES */
+.show-modal {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.75rem 3.5rem;
@@ -238,7 +99,7 @@ body {
 }
 
 /* CLASSES TO MAKE MODAL WORK */
-  /* .hidden {
+.hidden {
   display: none;
 }
 
@@ -263,18 +124,14 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
-  z-index: 5; 
-} */
+  z-index: 5;
+}
 
-  /* END OF MODAL STYLES */
+/* END OF MODAL STYLES */
 
-  /* LAYOUT */
-
+/* LAPTOP ABOVE SITE */
+@media (min-width: 701px) {
   body {
-    font-family: "Nunito", sans-serif;
-    font-weight: 400;
-    height: 100vh;
-    color: #333;
     background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
     display: flex;
     align-items: center;
@@ -300,7 +157,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.75s;
+    transition: all 0.5s;
     justify-content: center;
   }
 
@@ -355,21 +212,6 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    color: #444;
-    background: none;
-    border: none;
-    font-family: inherit;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 400;
-    transition: all 0.2s;
-    background-color: white;
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 0.7rem 2.5rem;
-    border-radius: 50rem;
-    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
   }
 
   .btn::first-letter {
@@ -404,5 +246,135 @@ body {
     transform: translateX(-50%);
     height: 10rem;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* MOBILE SITE */
+@media (max-width: 700px) {
+  body {
+    background-color: #ebd6dc;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 3rem;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .btns-div {
+    position: fixed;
+    padding: 15px 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+  }
+
+  .btns-div.top {
+    top: 0;
+  }
+
+  .btns-div.bottom {
+    bottom: 0;
+  }
+
+  .btns-bottom button {
+    margin: 0 10px;
+    width: 45%;
+  }
+
+  .btn-new {
+    position: fixed;
+    top: 10px;
+  }
+
+  .dice {
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    transform: translateX(-50%);
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .player {
+    transition: all 0.75s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    height: 40vh;
+    width: 100%;
+  }
+
+  .player--1 {
+    top: 10vh;
+  }
+
+  .player--2 {
+    bottom: 10vh;
+  }
+
+  .player .name {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+  }
+
+  .score-div,
+  .current {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+  }
+
+  .current-label,
+  .score-label {
+    margin-right: 5px;
+    text-transform: uppercase;
+  }
+
+  .current {
+    background: #c7365f;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 2em;
+    margin: 10px 0 0 0;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.25rem;
+  }
+
+  .score-div {
+    border-radius: 2em;
+    font-size: 7rem;
+    text-transform: uppercase;
+  }
+
+  .score {
+    color: #c7365f;
+  }
+
+  .player--active {
+    background-color: #f39bb7;
+  }
+
+  .current-label {
+    font-size: 1.25rem;
+  }
+
+  .current-score {
+    font-size: 2rem;
   }
 }
