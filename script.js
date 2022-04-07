@@ -1,34 +1,34 @@
 "use strict";
 
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
+// const modal = document.querySelector(".modal");
+// const overlay = document.querySelector(".overlay");
+// const btnCloseModal = document.querySelector(".close-modal");
 
-const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
+// const openModal = function () {
+//   modal.classList.remove("hidden");
+//   overlay.classList.remove("hidden");
+// };
 
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
+// const closeModal = function () {
+//   modal.classList.add("hidden");
+//   overlay.classList.add("hidden");
+// };
 
-// Listen for page load, then open modal
+// // Listen for page load, then open modal
 
-// Closing modal
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+// // Closing modal
+// btnCloseModal.addEventListener("click", closeModal);
+// overlay.addEventListener("click", closeModal);
 
-// Key press escape
-document.addEventListener("keydown", function (e) {
-  // console.log(e.key);
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
+// // Key press escape
+// document.addEventListener("keydown", function (e) {
+//   // console.log(e.key);
+//   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+//     closeModal();
+//   }
+// });
 
-setTimeout(openModal, 3000);
+// setTimeout(openModal, 3000);
 
 // GAME CODE
 

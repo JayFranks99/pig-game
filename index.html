@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- MODAL INSTRUCTIONS -->
-    <div class="modal hidden">
+    <!-- <div class="modal hidden">
       <button class="close-modal">&times;</button>
       <h1>Read the rules of Pig Game before playing!</h1>
 
@@ -40,32 +40,44 @@
         more points, the game ends and that player is the winner.
       </p>
     </div>
-    <div class="overlay hidden"></div>
+    <div class="overlay hidden"></div> -->
     <!-- END -->
 
     <main>
+      <div class="btns-top">
+        <button class="btn btn--new">🔄 New game</button>
+      </div>
+
       <section class="player player--1 player--active">
         <h2 class="name" id="name--1">Player 1</h2>
-        <p class="score" id="score--1">43</p>
-        <div class="current">
-          <p class="current-label">Current</p>
-          <p class="current-score" id="current--1">0</p>
+        <div class="score-div">
+          <!-- <p class="score-label">Current:</p> -->
+          <p class="score" id="score--1">43</p>
         </div>
-      </section>
-      <section class="player player--2">
-        <h2 class="name" id="name--2">Player 2</h2>
-        <p class="score" id="score--2">24</p>
         <div class="current">
-          <p class="current-label">Current</p>
-          <p class="current-score" id="current--2">0</p>
+          <p class="current-label">Score:</p>
+          <p class="current-score" id="current--1">0</p>
         </div>
       </section>
 
       <img class="dice dice0" src="dice-5.png" alt="Playing dice" />
 
-      <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--roll">🎲 Roll dice</button>
-      <button class="btn btn--hold">📥 Hold</button>
+      <section class="player player--2">
+        <h2 class="name" id="name--2">Player 2</h2>
+        <div class="score-div">
+          <!-- <p class="score-label">Current:</p> -->
+          <p class="score" id="score--2">24</p>
+        </div>
+        <div class="current">
+          <p class="current-label">Score:</p>
+          <p class="current-score" id="current--2">0</p>
+        </div>
+      </section>
+
+      <div class="btns-bottom">
+        <button class="btn btn--roll">🎲 Roll dice</button>
+        <button class="btn btn--hold">📥 Hold</button>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
