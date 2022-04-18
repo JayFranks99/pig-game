@@ -1,34 +1,34 @@
 "use strict";
 
-// const modal = document.querySelector(".modal");
-// const overlay = document.querySelector(".overlay");
-// const btnCloseModal = document.querySelector(".close-modal");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
 
-// const openModal = function () {
-//   modal.classList.remove("hidden");
-//   overlay.classList.remove("hidden");
-// };
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
 
-// const closeModal = function () {
-//   modal.classList.add("hidden");
-//   overlay.classList.add("hidden");
-// };
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
 
-// // Listen for page load, then open modal
+// Listen for page load, then open modal
 
-// // Closing modal
-// btnCloseModal.addEventListener("click", closeModal);
-// overlay.addEventListener("click", closeModal);
+// Closing modal
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
 
-// // Key press escape
-// document.addEventListener("keydown", function (e) {
-//   // console.log(e.key);
-//   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-//     closeModal();
-//   }
-// });
+// Key press escape
+document.addEventListener("keydown", function (e) {
+  // console.log(e.key);
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
 
-// setTimeout(openModal, 3000);
+setTimeout(openModal, 0);
 
 // GAME CODE
 
@@ -68,8 +68,12 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+diceImg.classList.add("hidden");
+
 // Switching player functions
 const switchToPlayer2 = function () {
+  // Hide dice every time a turn ends
+  diceImg.classList.add("hidden");
   // Switching active player
   player2.currentPlayer = true;
   player1.currentPlayer = false;
@@ -83,6 +87,8 @@ const switchToPlayer2 = function () {
 };
 
 const switchToPlayer1 = function () {
+  // Hide dice every time a turn ends
+  diceImg.classList.add("hidden");
   // Switching active player
   player1.currentPlayer = true;
   player2.currentPlayer = false;
@@ -99,6 +105,8 @@ const switchToPlayer1 = function () {
 
 // ROLL BUTTON FUNCTION
 rollBtn.addEventListener("click", function () {
+  // Show dice when roll btn is clicked
+  diceImg.classList.remove("hidden");
   // Creating random number - setting the dice image
   let rollNumber = randomIntFromInterval(1, 6);
   console.log(`Roll is ${rollNumber}`);

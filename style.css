@@ -327,6 +327,7 @@ body {
     left: 0;
     height: 40%;
     width: 100%;
+    opacity: 0.3;
   }
 
   .player--1 {
@@ -335,6 +336,15 @@ body {
 
   .player--2 {
     bottom: 10%;
+  }
+
+  .player--active {
+    background-color: #f39bb7;
+    opacity: 1;
+  }
+
+  .player--winner {
+    opacity: 1 !important;
   }
 
   .player .name {
@@ -380,15 +390,42 @@ body {
     color: #c7365f;
   }
 
-  .player--active {
-    background-color: #f39bb7;
-  }
-
   .current-label {
     font-size: 1.25rem;
   }
 
   .current-score {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 321px) {
+  .modal,
+  .overlay {
+    display: none;
+  }
+
+  .btn {
+    font-size: 1.25rem;
+  }
+
+  .dice {
+    width: 65px;
+  }
+
+  .player .name {
+    font-size: 2.5rem;
+  }
+
+  .score-div {
+    font-size: 5.5rem;
+  }
+
+  .current-label {
+    font-size: 1rem;
+  }
+
+  .current-score {
+    font-size: 1.75rem;
   }
 }
